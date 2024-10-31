@@ -1,0 +1,391 @@
+{
+	"info": {
+		"_postman_id": "1a1721c0-c8d6-4c94-b88b-f0f0d3c13969",
+		"name": "Whatsmeow",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29749114"
+	},
+	"item": [
+		{
+			"name": "Is Login",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/v1/whatsapp/is-login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"v1",
+						"whatsapp",
+						"is-login"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "False",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/v1/whatsapp/is-login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"v1",
+								"whatsapp",
+								"is-login"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 31 Oct 2024 16:36:29 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "18"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"is_login\": false\n}"
+				},
+				{
+					"name": "True",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/v1/whatsapp/is-login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"v1",
+								"whatsapp",
+								"is-login"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 31 Oct 2024 16:42:31 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "17"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"is_login\": true\n}"
+				}
+			]
+		},
+		{
+			"name": "Login (use browser)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/v1/whatsapp/login-qr",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"v1",
+						"whatsapp",
+						"login-qr"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Send",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"to\": \"082373912903\",\r\n    \"message\": \"Hello!\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/v1/whatsapp/send",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"v1",
+						"whatsapp",
+						"send"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Invalid Body Request",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/v1/whatsapp/send",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"v1",
+								"whatsapp",
+								"send"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 31 Oct 2024 16:40:08 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "32"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"error\": \"Invalid body request\"\n}"
+				},
+				{
+					"name": "Device not login yet",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"to\": \"08123456789\",\r\n    \"message\": \"Hello!\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/v1/whatsapp/send",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"v1",
+								"whatsapp",
+								"send"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 31 Oct 2024 16:40:29 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "37"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"device is not logged in\"\n}"
+				},
+				{
+					"name": "Success",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"to\": \"08123456789\",\r\n    \"message\": \"Hello!\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/v1/whatsapp/send",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"v1",
+								"whatsapp",
+								"send"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 31 Oct 2024 16:42:42 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "37"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Success sending message\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Reset",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/v1/whatsapp/reset",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"v1",
+						"whatsapp",
+						"reset"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Success",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/v1/whatsapp/reset",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"v1",
+								"whatsapp",
+								"reset"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 31 Oct 2024 16:44:43 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "34"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Success reset device\"\n}"
+				}
+			]
+		}
+	]
+}
